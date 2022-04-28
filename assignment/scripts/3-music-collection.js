@@ -22,7 +22,7 @@ Update the `3-music-collection.js` file to do the following:
 - Add a function named `showCollection`. This function should:
   - Take in an array parameter. (This allows it to be reused to show any collection, like the results from the find or search.)
   - Console.log the number of items in the array.
-  - Loop over the array and console.log each album's information formatted like: `TITLE by ARTIST, published in YEAR`.
+  - Loop over the array and console.log each album's information formatted like: `${TITLE} by ${ARTIST}, published in ${YEAR}`.
 
 - Test the `showCollection` function.
 
@@ -68,23 +68,43 @@ Update the `3-music-collection.js` file to do the following:
 
 let collection = [];
 
-function addToCollection(album) {
-  collection.push(["album", "artist", "yearPublished"]);
-  return album;
+function addToCollection(album, artist, yearPublished) {
+  let record = {
+    album: album,
+    artist: artist,
+    yearPublished: yearPublished,
+  };
+  collection.push(record);
+  return record;
 }
-let album1 = {
-  album: "Come On Over",
-  artist: "Shania Twain",
-  yearPublished: 1997,
-};
-let album2 = {
-  album: "The Woman In Me",
-  artist: "Shania Twain",
-  yearPublished: 1995,
-};
-let album3 = {
-  album: "Enter the 36 Chambers",
-  artist: "Wu-Tang Clan",
-  yearPublished: 1993,
-};
-console.log(addToCollection(album1));
+addToCollection("Come On Over", "Shania Twain", 1997);
+addToCollection("The Woman In Me", "Shania Twain", 1995);
+addToCollection("Enter the 36 Chambers", "Wu-Tang Clan", 1993);
+addToCollection("Versus God", "Dillinger Four", 1997);
+addToCollection("Black Sunday", "Cypress Hill", 1993);
+addToCollection("Keep It Like A Secret", "Built To Spill", 1999);
+
+console.log(collection);
+
+/*
+function showCollection(collection) {
+  console.log(collection.length);
+  for (let i = 0; i < collection.length; i++) {
+    console.log(
+      `${collection[i].album} by ${collection[i].artist}, published in ${collection[i].yearPublished}`
+    );
+  }
+}
+showCollection(collection);
+*/
+
+function showCollection(collection) {
+  console.log(collection.length);
+  for (let collection of collections) {
+    collection += 1;
+    console.log(
+      `${collection[i].album} by ${collection[i].artist}, published in ${collection[i].yearPublished}`
+    );
+  }
+}
+showCollection(collection);
