@@ -100,11 +100,24 @@ showCollection(collection);
 
 function showCollection(collection) {
   console.log(collection.length);
-  for (let collection of collections) {
-    collection += 1;
+  for (let record of collection) {
     console.log(
-      `${collection[i].album} by ${collection[i].artist}, published in ${collection[i].yearPublished}`
+      `${record.album} by ${record.artist}, published in ${record.yearPublished}`
     );
   }
 }
 showCollection(collection);
+
+let artistFinder = [];
+
+function showByArtists() {
+  for (let artist of collection) {
+    if (artist.artist === artist) {
+      return artistFinder;
+    }
+  }
+  return "Dang, must not have that";
+}
+showByArtists("Shania Twain");
+console.log(`Do I have: `, showByArtists("Shania Twain"));
+//IT'S BROKE!
