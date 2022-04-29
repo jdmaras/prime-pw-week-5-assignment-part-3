@@ -108,16 +108,18 @@ function showCollection(collection) {
 }
 showCollection(collection);
 
-let artistFinder = [];
-
-function showByArtists() {
-  for (let artist of collection) {
-    if (artist.artist === artist) {
-      return artistFinder;
+function showByArtists(artist) {
+  let artistFinder = [];
+  for (let musician of collection) {
+    if (musician.artist === artist) {
+      artistFinder.push(musician);
     }
   }
-  return "Dang, must not have that";
+  return artistFinder;
 }
-showByArtists("Shania Twain");
+showByArtists(collection);
+console.log(`Do I have: `, showByArtists("Cypress Hill"));
+console.log(`Do I have: `, showByArtists("Tool"));
 console.log(`Do I have: `, showByArtists("Shania Twain"));
-//IT'S BROKE!
+
+//
