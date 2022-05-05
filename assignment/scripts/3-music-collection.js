@@ -110,6 +110,7 @@ showCollection(collection);
 
 function showByArtists(artist) {
   let artistFinder = [];
+  //this is returning that artist finder back to empty when it runs so it can keep going through it in local scope vs global scope
   for (let musician of collection) {
     if (musician.artist === artist) {
       artistFinder.push(musician);
